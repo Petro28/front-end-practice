@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/script.js"></script>
+  <link rel="shortcut icon" href="#">
+  <title>ToDoList</title>
+</head>
+<body>
+  <h1 class="main-title">My Goals</h1>
+  <div class="body">
+    <div class="main-goals">
+      <h2 class="main-goals__title">
+        Main goals
+      </h2>
+      <ul data-lists></ul>
+      <form action="" data-new-list-form>
+        <input
+        type="text"
+        class="new-goal"
+        data-new-list-input
+        placeholder="new goal name"
+        aria-lable="new goal name"
+        >
+        <button class="btn btn-goal" aria-label="create new goal">
+          +
+        </button>
+      </form>
+    </div>
+    <div class="sub-goals" data-list-display-container>
+      <div class="sub-goals__header">
+        <h2 class="sub-goals__title" data-list-title></h2>
+        <p class="sub-goals__remaining" data-list-count></p>
+      </div>
+      <div class="sub-goals__body">
+        <div class="sub-goals__tasks" data-tasks></div>
+        <div class="sub-goals__creator">
+          <form action="" data-new-task-form>
+            <input
+            type="text"
+            data-new-task-input
+            class="new-goal new-task"
+            placeholder="new task name"
+            aria-lable="new task name"
+            >
+            <button class="btn btn-task" aria-label="create new task">
+              +
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="sub-goals__footer">
+        <button class="btn btn-clear-goals" aria-label="delete compleated tasks" data-delete-complete-tasks>
+          Clear completed tasks
+        </button>
+        <button class="btn btn-delete-list" aria-label="delete list" data-delete-list-button>
+          Delete list
+        </button>
+      </div>
+    </div>
+  </div>
+  <template id="task-template">
+    <div class="task">
+      <input type="checkbox" class="checkbox">
+      <label>
+        <span class="custom-checkbox"></span>
+      </label>
+    </div>
+  </template>
+</body>
+</html>

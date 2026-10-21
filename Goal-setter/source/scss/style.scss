@@ -1,0 +1,191 @@
+@import "null.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Open+Sans&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+html {
+  background-image: url(../img/background.jpg);
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-size: 100% 100vh;
+}
+
+body {
+  color: rgb(44, 66, 168);
+  list-style: circle;
+  overflow: hidden;
+}
+
+$active-color: rgb(15, 13, 104);
+
+
+.main-title {
+  font-family: 'Mochiy Pop P One', sans-serif;
+  letter-spacing: 10px;
+  font-size: 6rem;
+  text-align: center;
+  padding: 50px 0 0 0;
+}
+.body {
+  display: flex;
+  margin: 16rem 0 0 0;
+  font-size: 2rem;
+  justify-content: space-evenly;
+}
+.main-goals {
+  line-height: 50px;
+
+		&__title {
+      padding: 20px;
+      font-weight: 700;
+      letter-spacing: 3px;
+		}
+}
+.active {
+  font-weight: 700;
+  color: $active-color;
+}
+.list {
+  list-style: circle;
+  cursor: pointer;
+  transition: 250ms ease-in;
+}
+.list:hover {
+  color: $active-color;
+  transform: scale(1.1);
+}
+.new-goal {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  border-bottom: 1px solid currentColor;
+  font-size: inherit;
+  transition: border-bottom 150ms ease-in;
+}
+.new-goal:focus {
+  border-bottom-width: 3px;
+  border-color: $active-color;
+}
+.new-goal:focus::placeholder {
+  opacity: 0.2;
+}
+.btn-goal {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-right: 0.25em;
+}
+.sub-goals {
+
+		&__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+      padding: 25px;
+      background-color: rgba($color: #948888, $alpha: .5);
+      border-radius: 10px 10px 0 0;
+		}
+
+		&__title {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+		}
+
+		&__remaining {
+      font-size: 1.3rem;
+		}
+
+		&__body {
+      line-height: 50px;
+      background-color: rgba(156, 33, 33, 0.486);
+      padding: 25px;
+		}
+		&__footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+      background-color: rgba($color: #948888, $alpha: .5);
+		}
+}
+.task label {
+  display: flex-inline;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.task {
+  position: relative;
+  transition: transform 250ms ease-in-out;
+  margin-bottom: 1.25rem;
+}
+.task:hover .custom-checkbox,
+[type="checkbox"]:focus + label .custom-checkbox {
+  transform: scale(1.3);
+  border-color: $active-color;
+}
+  [type="checkbox"]:checked + label .custom-checkbox {
+    background: $active-color;
+    border-color: rgb(223, 183, 5);
+}
+.task label::after {
+  content: "";
+  position: absolute;
+  left: 1.3em;
+  right: 0;
+  top: 50%;
+  height: 3px;
+  background: currentColor;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+  transform-origin: right;
+}
+[type="checkbox"]:checked + label::after{
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.task::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: -0.5em;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.1;
+}
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+.custom-checkbox {
+  --size: 1rem;
+  display: inline-block;
+  width: var(--size);
+  height: var(--size);
+  margin-right: var(--size);
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  transition: transform 250ms ease-in-out;
+}
+.btn {
+  background: 0;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font-size: 1.5rem;
+  font-weight: 900;
+  transition: 250ms ease-in;
+}
+.btn-goal,.btn-task {
+  font-size: 2rem;
+}
+.btn:hover, .btn:focus {
+  color: $active-color;
+  transform: scale(1.1);
+}
